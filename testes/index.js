@@ -1,39 +1,27 @@
 var deck = [];
-var value=[];
+
+
+
 var new_deck = preguica(deck);
 
-console.log(new_deck.length);
-
-value.sort();
-console.log(value);
-
-function gimmeCard() {
-    var rand = Math.floor(Math.random()*(new_deck.length+1));
+//console.log(new_deck.length);
 
 
-    console.table(new_deck[rand,rand]);
+
+
+
     
-    
+        
+console.log(new_deck[random(this.length),random(this.length)])    
 
 
+
+
+
+
+function random(num){
+    return Math.floor(Math.random()*num);
 }
-   
-
-
-
-
-var btn = document.createElement("BUTTON");   // Create a <button> element
-btn.innerHTML = "CLICK ME";                   // Insert text
-document.body.appendChild(btn); 
-
-
-
-
-
-
-
-
-
 
 
 
@@ -63,14 +51,7 @@ return deck = [
         ["IX. The Hermit -- Know the answer to your next dilemma.", "Vizier -- This card empowers the character drawing it with the one-time ability to call upon a source of wisdom to solve any single problem or answer fully any question upon her request. The query or request must be made within one year. Whether the information gained can be successfully acted upon is another question entirely."],
         ["Eight of swords -- Body functions, but soul is trapped elsewhere.", "The Void -- This black card spells instant disaster. The character’s body continues to function, as though comatose, but her psyche is trapped in a prison somewhere—in an object on a far plane or planet, possibly in the possession of an outsider. A wish or a miracle does not bring the character back, instead merely revealing the plane of entrapment. Draw no more cards."],
         ]
+
+
 }
-
-
-
-
-
-
-
-
-
 
