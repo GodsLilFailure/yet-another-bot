@@ -37,21 +37,32 @@ client.on('message', (receivedMessage) => {
 
         if(receivedMessage.content=="Hibiki!"){
             receivedMessage.react("🃏");
-            channel = receivedMessage.channel();
-            
-            if(deck.length>0){
-            
-            receivedMessage.reply(new_deck[random(new_deck.length),random(new_deck.length)]);
-            
-            new_deck.sort();
-            new_deck.pop();
-            console.log("you still have ",deck.length," cards left")
-            }else{
-                receivedMessage.reply("no more cards");
+            receivedMessage.react("793907861431255070");
+            receivedMessage.react("793907845908267018");
+            receivedMessage.react("793907608629018634");
+            receivedMessage.react("793909496745033748");
+            receivedMessage.react("793907149956186123");
+            receivedMessage.react("793906164860846110");
+            receivedMessage.react("🃏");
 
-            }            
             
         }
+        message.awaitReactions(filter, { max: 1, time: 60000, errors: ['time'] })
+    .then(collected => {
+        const reaction = collected.first();
+
+        if (reaction.emoji.name === '👍') {
+            message.reply('you reacted with a thumbs up.');
+        } else {
+            message.reply('you reacted with a thumbs down.');
+        }
+    })
+    .catch(collected => {
+        message.reply('you reacted with neither a thumbs up, nor a thumbs down.');
+    });
+
+
+        
         if(receivedMessage.content=="debug"){
             for (let i = 0; i < new_deck.length; i++) {
                 console.log(new_deck[i]);
@@ -65,7 +76,21 @@ client.on('message', (receivedMessage) => {
 })
 
 
+function get_it_later(argument) {
+            channel = receivedMessage.channel();
+            
+            if(deck.length>0){
+            
+            receivedMessage.reply(new_deck[random(new_deck.length),random(new_deck.length)]);
+            
+            new_deck.sort();
+            new_deck.pop();
+            console.log("you still have ",deck.length," cards left")
+            }else{
+                receivedMessage.reply("no more cards");
 
+            }            
+}
 
 
 function random(num){
