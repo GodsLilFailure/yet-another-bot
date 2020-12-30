@@ -35,7 +35,9 @@ client.on('message', (receivedMessage) => {
         console.log(receivedMessage.author.username);
         
 
-        if(receivedMessage.content=="deck"){
+        if(receivedMessage.content=="Hibiki!"){
+            receivedMessage.react("🃏");
+            channel = receivedMessage.channel();
             
             if(deck.length>0){
             
